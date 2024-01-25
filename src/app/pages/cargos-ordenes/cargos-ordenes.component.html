@@ -1,0 +1,29 @@
+<div class="container mt-3">
+  <br>
+  <div class="d-flex justify-content-center m-1">
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label class="text-white">
+          <i class="fa-solid fa-magnifying-glass mr-2"></i> Buscar ...
+        </mat-label>
+        <input type="text"
+               placeholder="Buscar orden"
+               aria-label="text"
+               matInput
+               [formControl]="myControl"
+               [matAutocomplete]="auto">
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" [displayWith]="displayFn">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option['order_number']}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+    
+  </div>
+  
+  <ng-container *ngFor="let orden of ordenes_result">
+      <app-orden [dataOrden]="orden"></app-orden>
+  </ng-container>
+  
+</div>

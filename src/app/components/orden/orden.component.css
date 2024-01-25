@@ -1,0 +1,33 @@
+.btn-per{
+    width: 35vw ;
+    margin-left: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    text-align: center;
+    background-color: #ffff00;
+    font-weight: bolder;
+}
+.btn-per2{
+    width: 35vw ;
+    margin-left: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    text-align: center;
+    background-color: #16181a;
+    border-color: white;
+    font-weight: bolder;
+    color: white;
+}
+.card, .row, .list-group-item{
+    background-color: #16181a;
+    border-color: #16181a;
+    color: white;
+}

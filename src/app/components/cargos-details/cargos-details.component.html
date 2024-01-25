@@ -1,0 +1,82 @@
+<div class="text-start">
+    <button class="btn btn-per btn-sm" type="button" [routerLink]="['/cargoOrdenes']" routerLinkActive="router-link-active" style="width: 50px;" >
+        <
+    </button>
+</div>
+<ng-container *ngIf="dataOrden">
+    <div class="row m-3">
+    <div class="container mt-3">
+        <div class="card">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    &emsp;  Referencia {{dataOrden['reference_number']}}
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <h3><strong>Order #{{dataOrden['order_number']}}</strong> </h3>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                        <ng-container *ngFor="let dest of dataOrden['destinations']; let ind = index">
+                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                <div class="accordion-item ">
+                                  <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#flush-collapseOne'+ind" aria-expanded="false" aria-controls="flush-collapseOne">
+                                        {{dest['address'] | slice:0:25}}...
+                                        <span>{{dest['status_string']}}</span>
+                                    </button>
+                                  </h2>
+                                  <div [id]="'flush-collapseOne'+ind" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                    <div class="d-flex justify-content-center">
+                                        <img  class="example-header-image" [src]=" dataOrden['truck']['thumbnail'] || '../../../assets/avatar.png'" alt="Photo of a Shiba Inu">
+                                    </div>
+                                    <!-- {{dataOrden['status_list'] | json}} -->
+
+                                    <!-- <p><i class="fa " [ngClass]="item['active'] ? 'fa-circle-check':'fa-circle'"></i> {{item['status']}}</p> -->
+                                    <section class="timeline al">
+                                        <ul>
+                                            <ng-container *ngFor="let item of dataOrden['status_list']['pickup']; let i = index">
+                                              <li>
+                                                <div class="">
+                                                    <i class="fa colorIcon fa-sm " [ngClass]="item['active'] ? 'fa-circle-check':'fa-circle'"></i> {{item['status']}}
+                                                </div>
+                                              </li>  
+                                            </ng-container>
+                                              <!-- more list items here -->
+                                            </ul>
+                                          </section>
+                                          <div class="text-center">
+                                            <button class="btn btn-trackOrder" [disabled]="dataOrden.contadorpickup < 3" (click)="trackOrder()">
+                                                Track order
+                                            </button>
+                                          </div>
+                                    <br>
+                                    
+
+                                    <div class="card">
+                                        <div class="card-header">
+                                            Pickup Data
+                                        </div>
+                                        <div class="card-body">
+                                        <h4 class="card-title">{{dest.address}}</h4>
+                                        <p class="card-text text-justify">{{dest.startDate | fechaFormato:true}}</p>
+                                        <p class="card-text text-justify">{{dest.contact_info.telephone}}</p>
+                                        <p class="card-text text-justify">{{dest.contact_info.email}}</p>
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="mb-5"></div>
+                                  </div>
+                                  
+                                </div>
+                                
+                                
+
+                              </div>
+                            
+                        </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>   
+</ng-container>
+

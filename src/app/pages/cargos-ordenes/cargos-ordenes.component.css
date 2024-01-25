@@ -1,0 +1,11 @@
+input{
+    color: white;
+}
+::ng-deep .cdk-overlay-container .mat-option {
+    background-color: #16181a;
+    color: white;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }

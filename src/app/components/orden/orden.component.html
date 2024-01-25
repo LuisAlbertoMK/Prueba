@@ -1,0 +1,50 @@
+<ng-container *ngIf="dataOrden['_id']">
+    <div class="row m-2">
+        <h3>Order: <strong>#{{dataOrden['order_number']}} </strong></h3>
+        <div class="card">
+            <div class="card-body">
+              
+              <div class="row">
+                <div class="col-7 col-sm-7 col-md-8 col-lg-10">
+                    <h5 class="card-title">
+                      <i class="fa fa-truck"></i>
+                      {{dataOrden['type']}}
+                    </h5>
+                </div>
+                <div class="col-5 col-sm-5 col-md-4 col-lg-2 text-end">
+                        {{StatusShow(dataOrden['status'])}}
+                </div>
+              </div>
+            
+              <ol class="list-group">
+                <ng-container *ngFor="let dest of dataOrden['destinations']">
+                    <li class="list-group-item  justify-content-between">
+                        <!-- <div class="vr"></div> -->
+                        <!-- <div class="fw-bold">Subheading</div> -->
+                        <div class="row">
+                          <div class="col-7">
+                            {{dest.address | slice:0:15 }} ...
+                          </div>
+                          <div class="col-5 text-end">
+                            {{dest.end_date | fechaFormato:true}}
+                          </div>
+                        </div>
+                      
+                      <!-- <span class="badge bg-primary rounded-pill">14</span> -->
+                    </li>
+                  </ng-container>
+              </ol>
+              <div class="row">
+                <button class="btn btn-sm btn-per2" (click)="verificar(dataOrden)">Start pickup in </button>
+                <button class="btn btn-sm btn-per" (click)="navegar(dataOrden)">
+                  Resumen <i class="fa fa-eye"></i>
+                </button>
+              </div>
+              
+              <!-- <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+               -->
+            </div>
+        </div>
+    </div>
+</ng-container>

@@ -1,0 +1,82 @@
+
+.example-header-image {
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+  }
+.btn-per{
+    width: 35vw;
+    margin-left: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    text-align: center;
+    background-color: #ffff00;
+    font-weight: bolder;
+}
+.btn-trackOrder{
+    width: 50vw;
+    margin-left: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    text-align: center;
+    background-color: #ffff00;
+    font-weight: bolder;
+}
+.card, .list-group-item, .accordion-header, .accordion-item, .show, .collapse, .row, .accordion-button, .collapsed{
+    background-color: #16181a;
+    border-color: #16181a;
+    color: white;
+}
+.card-header{
+    background-image: radial-gradient(circle at 50% 50%, #42423f 0, #42423f 16.67%, #42423f 33.33%, #2d3033 50%, #2d3033 66.67%, #16181a 83.33%, #16181a 100%);
+    border-color: rgb(165, 165, 164);
+    border-bottom: #27292c;
+    border-top: #27292c;
+    height: 40px;
+    width: 100%;
+}
+.colorIcon{
+    color: #ffff00;
+}
+
+.timeline ul li {
+    list-style-type: none;
+    /* position: relative; */
+    width: 4px;
+    margin: 0 5px;
+    padding-top: 20px;
+    background: #ffff00;
+  }
+  .timeline ul li::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: inherit;
+  }
+  .timeline ul li div {
+      position: relative;
+      bottom: 0;
+      width: 400px;
+      /* padding: 15px; */
+      /* padding-left: -10%; */
+      background: #16181a;
+    }
+    .timeline ul li div i{
+        margin-left: -5px;
+        /* position: absolute; */
+        font-size: 1em;
+        margin-right: 10px;
+    }
