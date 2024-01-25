@@ -6,6 +6,7 @@ import { CargosDetailsComponent } from './components/cargos-details/cargos-detai
 const routes: Routes = [
   { path: 'cargoOrdenes', component: CargosOrdenesComponent},
   { path: 'detallesOrden', component: CargosDetailsComponent},
+  { path: '', component: CargosOrdenesComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'cargoOrdenes' },
 ];
 
